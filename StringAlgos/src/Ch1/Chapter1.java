@@ -7,6 +7,7 @@ public class Chapter1 {
 	}
 	
 	//Implement an algorithm to determine if a string has all unique characters
+	//Alternate approach: Use a bit string instead of boolean array
 	public boolean Q1_1(String str)
 	{
 		boolean []charMap = new boolean[26];
@@ -25,9 +26,19 @@ public class Chapter1 {
 			{
 				return false;
 			}
-			
 		}
 		
+		return true;
+	}
+	
+	//Q1_1: Alternate
+	public boolean isUniqueChars(String str) {
+		int checker = 0;
+		for (int i = 0; i < str.length(); ++i) {
+			int val = str.charAt(i) - 'a';
+			if ((checker & (1 << val)) > 0) return false;
+			checker |= (1 << val);
+		}
 		return true;
 	}
 }
