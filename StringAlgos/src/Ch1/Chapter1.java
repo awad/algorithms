@@ -1,9 +1,19 @@
 package Ch1;
+
+import java.util.TreeSet;
+
 public class Chapter1 {
 
 	public static void main(String [] args)
 	{
 		System.out.println("Hello World");
+		TreeSet set = new TreeSet<>();
+		set.add("lol");
+		set.add("cat");
+		set.add("cat");
+		
+		set.size();
+		System.out.println(set.toArray()[1]);
 	}
 	
 	//Implement an algorithm to determine if a string has all unique characters
